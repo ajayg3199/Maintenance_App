@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import LoginScreen from './LoginScreen';
 import ForgotPasswordScreen from './ForgotPasswordScreen';
+import Complaint from './complaint';
 // Import the RegistrationScreen
 
 const Stack = createStackNavigator();
@@ -22,6 +23,8 @@ export default function App() {
           }}
         />
           <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
+          <Stack.Screen name="complaint" component={Complaint} />
+
           {/* Add this line for RegistrationScreen */}
 
         {/* Add additional screens here, e.g., a Home screen */}
