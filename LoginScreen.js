@@ -2,14 +2,15 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, Button, TouchableOpacity, StyleSheet } from 'react-native';
 
 export default function LoginScreen({ navigation }) {
-  //const [username, setUsername] = useState('');
-  //const [password, setPassword] = useState('');
-
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+ // var Username ="a";
+ // var Password ="a";
   const handleLogin = () => {
     // Implement your authentication logic here
-    if (username === 'abc' && password === 'abc') {
+    if (username === "a" && password === "a") {
       // Authentication successful
-      navigation.navigate('WelcomeScreen');
+      navigation.navigate('complaint');
     } else {
       // Authentication failed
       alert('Invalid credentials');
@@ -40,6 +41,7 @@ export default function LoginScreen({ navigation }) {
       <Button
         title="Login"
         onPress={handleLogin}
+        
         color="maroon" // Set the login button color to maroon
       />
       <TouchableOpacity onPress={handleForgotPassword}>
