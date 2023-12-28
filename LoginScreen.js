@@ -23,7 +23,9 @@ export default function LoginScreen({ navigation }) {
     // Implement the "ForgotPasswordScreen" component separately.
     navigation.navigate('ForgotPassword');
   };
-
+  const handleRegistrationScreen = () => {
+    navigation.navigate('RegistrationScreen')
+  }
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Login</Text>
@@ -46,6 +48,9 @@ export default function LoginScreen({ navigation }) {
       />
       <TouchableOpacity onPress={handleForgotPassword}>
         <Text style={styles.forgotPassword}>Forgot Password?</Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={handleRegistrationScreen}>
+        <Text style={styles.forgotPassword}>Sign Up</Text>
       </TouchableOpacity>
     </View>
   );
