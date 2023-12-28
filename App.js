@@ -1,10 +1,11 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { Image } from 'react-native'; // Import Image component
 import LoginScreen from './LoginScreen';
 import ForgotPasswordScreen from './ForgotPasswordScreen';
 import Complaint from './complaint';
-// Import the RegistrationScreen
+import RegistrationScreen from './RegistrationScreen';
 
 const Stack = createStackNavigator();
 
@@ -15,21 +16,50 @@ export default function App() {
         <Stack.Screen
           name="Goa Institute Of Management"
           component={LoginScreen}
+          options={({ navigation }) => ({
+            headerStyle: {
+              backgroundColor: '#9A1B38',
+            },
+            headerTintColor: 'white',
+            headerLeft: () => (
+              <Image
+                source={require('./assets/GIM_LOGO.png')} // Replace with the actual path to your image
+                style={{ width: 40, height: 40, marginLeft: 10 }}
+              />
+            ),
+          })}
+        />
+        <Stack.Screen
+          name="ForgotPassword"
+          component={ForgotPasswordScreen}
           options={{
             headerStyle: {
-              backgroundColor: '#9A1B38', // Set the background color to red
+              backgroundColor: '#9A1B38',
             },
-            headerTintColor: 'white', // Set the text color to white
+            headerTintColor: 'white',
           }}
         />
-          <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
-          <Stack.Screen name="complaint" component={Complaint} />
-
-          {/* Add this line for RegistrationScreen */}
-
-        {/* Add additional screens here, e.g., a Home screen */}
+        <Stack.Screen
+          name="complaint"
+          component={Complaint}
+          options={{
+            headerStyle: {
+              backgroundColor: '#9A1B38',
+            },
+            headerTintColor: 'white',
+          }}
+        />
+        <Stack.Screen
+          name="RegistrationScreen"
+          component={RegistrationScreen}
+          options={{
+            headerStyle: {
+              backgroundColor: '#9A1B38',
+            },
+            headerTintColor: 'white',
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
-
